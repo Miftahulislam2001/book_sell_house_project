@@ -11,10 +11,12 @@ import About from './Components/About'
 import Books from './Components/Books'
 import BookDetail from './Components/BookDetail';
 import LoadSpinner from './Components/ActiveLink/LoadSpinner/LoadSpinner';
+import ErrorPage from './Components/ErrorPage';
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Admin/>,
+    errorElement: <ErrorPage/>,
     children: [
       {
         path: "/",
