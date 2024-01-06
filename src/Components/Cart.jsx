@@ -1,10 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Cart = ({ books }) => {
-    console.log(books);
+   
     // const { image, price, subtitle, title} = books;
     return (
-        <div className='overflow-hidden relative transition duration-200 transform hover:-translate-y-2 rounded shadow-lg hover:shadow-2xl'>
+        <Link to={`/book/${books.isbn13}`}>
+                    <div className='overflow-hidden relative transition duration-200 transform hover:-translate-y-2 rounded shadow-lg hover:shadow-2xl'>
             <img
                 src={books.image}
                 alt='book cover'
@@ -17,6 +19,7 @@ const Cart = ({ books }) => {
                 <p className='mt-auto font-semibold text-xl'>Price: {books.price}</p>
             </div>
         </div>
+        </Link>
     );
 };
 
