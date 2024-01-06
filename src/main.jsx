@@ -10,7 +10,7 @@ import Home from './Components/Home';
 import About from './Components/About'
 import Books from './Components/Books'
 import BookDetail from './Components/BookDetail';
-import LoadSpinner from './Components/ActiveLink/LoadSpinner/LoadSpinner';
+import LoadSpinner from './Components/LoadSpinner/LoadSpinner';
 import ErrorPage from './Components/ErrorPage';
 const router = createBrowserRouter([
   {

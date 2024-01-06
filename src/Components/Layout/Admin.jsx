@@ -2,7 +2,7 @@ import React from 'react';
 import { Outlet, useNavigation } from 'react-router-dom';
 import Header from '../Header';
 import Footer from '../Footer';
-import LoadSpinner from '../ActiveLink/LoadSpinner/LoadSpinner';
+import LoadSpinner from '../LoadSpinner/LoadSpinner';
 
 const Admin = () => {
     const navigation = useNavigation();
