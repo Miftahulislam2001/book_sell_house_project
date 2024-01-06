@@ -1,11 +1,14 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
+import Header from '../Header';
+import Footer from '../Footer';
 
 const Admin = () => {
     return (
         <div>
-            <h3>This is admin page</h3>
+            <Header/>
             <Outlet/>
+            <Footer/>
         </div>
     );
 };
