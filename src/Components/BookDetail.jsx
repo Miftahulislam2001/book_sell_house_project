@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 
+
 const BookDetail = () => {
+
     const bookId = useLoaderData()
-    const { image, title, authors, publisher, year, rating, url, price} = bookId;
-    console.log(bookId);
+    const { image, title, desc, authors, publisher, year, rating, url, price } = bookId;
+    const [fold, setFold] = useState(true)
     return (
         <div className='my-container'>
 
@@ -33,6 +35,22 @@ const BookDetail = () => {
                     <p className=' text-gray-900'>Year: {year}</p>
                     <p className='mb-5 text-gray-900'>Rating: {rating}</p>
 
+
+                    {/* Read More Function */}
+                    {
+                        fold ? (
+                            <>
+                                <p className='text-gray-500'>{desc.substring(0, 100)}.....</p>
+                                <span className='cursor-pointer text-blue-600 ' onClick={() => setFold(!fold)}>Reed More</span>
+                            </>)
+
+                            : (
+                            <>
+                                <p className='text-gray-500'>{desc}</p>
+                                <span className='cursor-pointer text-blue-600 ' onClick={() => setFold(!fold)}>Reed Less</span>
+                            </>)
+
+                    }
 
                     <div className='flex gap-5 mt-8 items-center'>
                         <a href={url} target='_blank' className='btn'>

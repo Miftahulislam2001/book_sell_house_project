@@ -10,6 +10,7 @@ import Home from './Components/Home';
 import About from './Components/About'
 import Books from './Components/Books'
 import BookDetail from './Components/BookDetail';
+import LoadSpinner from './Components/ActiveLink/LoadSpinner/LoadSpinner';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
         path: "book/:bookId",
         element: <BookDetail/>,
         loader: ({params})=> fetch(`https://api.itbook.store/1.0/books/${params.bookId}`)
+      },
+      {
+        path: "loader",
+        element: <LoadSpinner></LoadSpinner>
       }
     ]
   },
